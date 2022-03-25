@@ -16,7 +16,7 @@ function myFunction() {
 //myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
-
+//It can access internal because nestedFunction and internal are inside the same function, myFunction.
 
 
 
@@ -30,9 +30,10 @@ function myFunction() {
 💡 NOTE: you may use a for loop for this function if you wish 
 */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
+function summation(num) {
+  let counter = 0;
+  counter = num1 + num2 + num3 + num4;
+  return counter;
   }
  
 
@@ -60,7 +61,7 @@ const zooAnimals = [
   💡 NOTE: the array returned should be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
+  function animalNames(array){
     /*Your Code Here*/
   }
   
@@ -175,10 +176,19 @@ function greeting(/*Your Code Here */){
 - Instances of CuboidMaker should initialize `length`, `width` and `height` properties
 */
 
-function CuboidMaker(/*Your Code Here */){
-  /*Your Code Here */
+function CuboidMaker(length, width, height){
+  this.length = length;
+  this.width = width;
+  this.heigh = height;
+}
+CuboidMaker.constructor.volume = function() {
+  this.volume = this.length * this.width * this.height;
+}
+CuboidMaker.constructor.surfaceArea = function() {
+  2 * ((this.length * this.width) + (this.length * this.height) + (this.width * this.height))
 }
 
+const cuboid = new CuboidMaker.constructor(4, 5, 5);
 
 /* 🐴🐴🐴 Step 2: Volume Method 🐴🐴🐴
   Create a method called volume using CuboidMaker's prototype that returns the volume of a given cuboid's length, width, and height
